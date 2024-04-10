@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint"
   },
-   "engines": {
+  "engines": {
     "node": ">=18.17.0",
     "npm": "please-use-yarn"
   },
@@ -23,6 +23,16 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "eslint-config-prettier": "latest",
+    "eslint-import-resolver-typescript": "latest",
+    "eslint-plugin-import": "latest",
+    "eslint-plugin-no-loops": "latest",
+    "eslint-plugin-prettier": "latest",
+    "eslint-plugin-react": "latest",
+    "eslint-plugin-react-hooks": "latest",
+    "prettier": "latest",
     "eslint-config-next": "14.1.4"
   }
 }
