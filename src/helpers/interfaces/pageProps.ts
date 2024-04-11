@@ -6,4 +6,5 @@ export interface HomepageUI {
   header: string;
   subHeader: string;
   description: string;
+  popularNetworkSearchs: Array<string>;
 }
