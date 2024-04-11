@@ -8,7 +8,7 @@ export default function Header() {
       <div className={styles["header_inner"] + " container"}>
         <Logo />
         <div className={styles["header--right"]}>
-          < ConnectButton />
+          <ConnectButton />
         </div>
       </div>
     </header>

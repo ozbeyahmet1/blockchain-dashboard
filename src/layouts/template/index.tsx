@@ -1,11 +1,10 @@
-import { Montserrat } from "next/font/google";
+import { Montserrat, Open_Sans } from "next/font/google";
 import { PropsWithChildren } from "react";
-import { useSelector } from "react-redux";
 import Background from "../background";
 import HeadLayout from "../head";
 import Header from "../header";
 import { backgroundData } from "@/datas/backgroundData";
-const montserrat = Montserrat({
+const montserrat = Open_Sans({
   subsets: ["latin"],
 });
 export default function Template({ children }: PropsWithChildren) {
@@ -15,7 +14,7 @@ export default function Template({ children }: PropsWithChildren) {
       <main className={montserrat.className} style={{ height: "100%" }}>
         <Header />
         {children}
-        <Background background={backgroundData[2]} />
+        <Background background={backgroundData[3]} />
       </main>
     </>
   );
