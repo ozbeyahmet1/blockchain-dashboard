@@ -1,0 +1,89 @@
+@import "../../../../styles/default/mixins";
+.blockRow {
+  display: flex;
+  align-items: flex-start;
+  padding: 15px 0;
+  font-size: 14px;
+  border-bottom: 1px solid var(--grey);
+  gap: 10px;
+  &_blockNumber {
+    color: var(--blue);
+    font-weight: 400;
+  }
+  &_price,
+  &_price--mobile {
+    border: 1px solid grey;
+    padding: 5px;
+    border-radius: 5px;
+    margin: auto;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &_recipientWrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  &_recipient {
+    color: var(--blue);
+  }
+  &_time {
+    color: grey;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  &_block--mobile {
+    display: none;
+  }
+  &_icon {
+    padding: 10px;
+    background-color: var(--grey);
+    border-radius: 5px;
+  }
+  &_blockInfos {
+    flex: 1.5;
+  }
+  &_transaction {
+    flex: 3;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    div {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &_price--mobile {
+    margin-left: 10px;
+    display: none;
+  }
+}
+
+@include sm {
+  .blockRow {
+    flex-direction: column;
+    gap: 0;
+    &_blockInfos {
+      display: flex;
+      align-items: flex-start;
+      gap: 5px;
+      line-height: 15px;
+    }
+    &_price {
+      display: none;
+      &--mobile {
+        display: flex;
+      }
+    }
+    &_icon {
+      display: none;
+    }
+    &_block--mobile {
+      display: flex;
+    }
+  }
+}
