@@ -19,11 +19,9 @@ export default function Card({ index, url, imageUrl, name }: CardProps) {
   };
 
   return (
-    <Link href={url} className={styles["card"]}>
-      <motion.div className={styles["card_single"]} {...cardMotionProps}>
-        <Image className={styles["card_image"]} src={imageUrl} width={80} height={80} alt="" />
-        <p className={styles["card_title"]}>{name}</p>
-      </motion.div>
-    </Link>
+    <motion.a href={url} className={styles["card"]} {...cardMotionProps}>
+      <Image className={styles["card_image"]} src={imageUrl} width={80} height={80} alt="" />
+      <p className={styles["card_title"]}>{name}</p>
+    </motion.a>
   );
 }
