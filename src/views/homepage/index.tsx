@@ -2,9 +2,10 @@ import { AnimationProps, motion } from "framer-motion";
 import { BsLightningFill } from "react-icons/bs";
 import { HomepageProps } from "@/helpers/interfaces/pageProps";
 import styles from "./homepage.module.scss";
-import Card from "@/components/ui/logo/card";
+import Card from "@/components/card";
 import { blockchainDatas } from "@/datas/blockchainData";
-export default function HomepageView({ ui: { description, header, subHeader } }: HomepageProps) {
+import SearchBar from "@/components/searchBar";
+export default function HomepageView({ ui: { description, header, subHeader, popularNetworkSearchs } }: HomepageProps) {
   const headerMotionProps: AnimationProps = {
     initial: { y: -100 },
     animate: { y: 0 },
@@ -34,6 +35,7 @@ export default function HomepageView({ ui: { description, header, subHeader } }:
           })}
         </div>
       </div>
+      <SearchBar networks={popularNetworkSearchs} />
     </div>
   );
 }
