@@ -1,0 +1,37 @@
+.summaryTable {
+  border-radius: 10px;
+  height: 500px;
+  width: 100%;
+  background: white;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  overflow-y: hidden;
+  &_header {
+    width: 100%;
+    border-bottom: 1px solid var(--grey);
+    padding: 20px;
+    font-weight: 600;
+  }
+  &_elements {
+    padding: 0 20px;
+    overflow-y: scroll;
+    height: 100%;
+  }
+  &--bottom {
+    background-color: var(--grey);
+    border-top: 1px solid rgb(193, 193, 193);
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(87, 87, 87);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    border-radius: 0 0 10px 10px;
+  }
+}
