@@ -1,0 +1,102 @@
+@import "../../styles/default/mixins";
+.network {
+  width: 100vw;
+  z-index: 99;
+  position: relative;
+  height: 100%;
+  padding-bottom: 100px;
+  &--top {
+    display: flex;
+    margin-bottom: 20px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid var(--grey);
+    padding: 15px;
+    border-radius: 15px;
+    gap: 20px;
+    img {
+      background-color: var(--grey);
+      border-radius: 10px;
+      aspect-ratio: 1;
+    }
+  }
+  &--bottom {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    gap: 20px;
+  }
+  &_grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    div {
+      height: 100%;
+      width: 100%;
+      padding: 15px;
+      border: 1px solid var(--grey);
+      &:first-child {
+        border-left: none;
+        border-top: none;
+      }
+      &:nth-child(2) {
+        border-right: none;
+        border-left: none;
+        border-top: none;
+      }
+      &:nth-child(3) {
+        border-bottom: none;
+        border-left: none;
+        border-top: none;
+      }
+      &:nth-child(4) {
+        border-right: none;
+        border-left: none;
+        border-bottom: none;
+        border-top: none;
+      }
+    }
+  }
+}
+@include sm {
+  .network {
+    &--bottom {
+      flex-direction: column;
+    }
+    &--top {
+      img {
+        display: none;
+      }
+    }
+    &_grid {
+      display: flex;
+      flex-direction: column;
+      div {
+        &:first-child {
+          border-left: none;
+          border-top: none;
+          border-right: none;
+        }
+        &:nth-child(2) {
+          border-right: none;
+          border-left: none;
+          border-top: none;
+        }
+        &:nth-child(3) {
+          border-left: none;
+          border-top: none;
+          border-right: none;
+          border-bottom: 1px solid var(--grey);
+        }
+        &:nth-child(4) {
+          border-right: none;
+          border-left: none;
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
