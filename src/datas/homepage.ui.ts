@@ -4,5 +4,6 @@ export const HomepageUIData: HomepageUI = {
   header: "Centralizing Blockchain Data for Seamless Insights!",
   subHeader: "Uncover, Contrast, and Stay in the Loop with Blockchain Insights!",
   description: "Explore Ethereum, Avalanche, Solana,Arbitrium and Beyond!",
-  popularNetworkSearchs: ["ethereum", "avalanche", "solana", "arbitrium"],
+  popularNetworkSearchs: ["solana", "stellar", "tezos", "ethereum",],
+  popularBlockchainIds: ["solana", "stellar", "ripple", "tezos"],
 };
