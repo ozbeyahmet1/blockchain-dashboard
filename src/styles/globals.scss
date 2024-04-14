@@ -1,0 +1,12 @@
+@import "./default/common";
+@import "./default/mixins";
+@import "./default/typography";
+@import "./default/colors";
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+main {
+  overflow-x: hidden;
+}
