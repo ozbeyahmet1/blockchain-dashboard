@@ -1,5 +1,5 @@
 export interface SupportedChain {
-  id: string;
+  id: SupportedChains;
   symbol: string;
   name: string;
   web_slug: string;
