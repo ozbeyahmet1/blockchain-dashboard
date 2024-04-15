@@ -27,9 +27,7 @@ interface NetworkPageViewProps {
  */
 export default function NetworkPageView({ chainData }: NetworkPageViewProps): JSX.Element {
   const pathname = usePathname();
-  const searchResult = supportedChains.find((chain) =>
-    chain.web_slug.toString().includes(pathname?.replace("/", ""))
-  );
+  const searchResult = supportedChains.find((chain) => chain.web_slug.toString().includes(pathname?.replace("/", "")));
   const motionDivProps: AnimationProps = {
     initial: { y: -300, opacity: 0 },
     animate: { y: 0, opacity: 1 },
@@ -41,7 +39,7 @@ export default function NetworkPageView({ chainData }: NetworkPageViewProps): JS
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     data: blockData,
   } = useQuery(GET_BLOCKS_QUERY, {
-    variables: { network: searchResult?.id },
+    variables: { network: searchResult?.id, limit: 10 },
   });
 
   const {
@@ -49,7 +47,7 @@ export default function NetworkPageView({ chainData }: NetworkPageViewProps): JS
     loading: txnLoading,
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     data: transactionData,
-  } = useQuery(GET_TRANSACTIONS, {});
+  } = useQuery(GET_TRANSACTIONS, { variables: { network: searchResult?.id, limit: 10 } });
 
   const [collapsed, setCollapsed] = useState(true);
   const blocks = (blockData as BlockQuery)?.blocks;
@@ -93,6 +91,7 @@ export default function NetworkPageView({ chainData }: NetworkPageViewProps): JS
                 }) ?? []
               }
               loading={loading}
+              type="block"
             />
             <SummaryTable
               header="Latest Transactions"
@@ -102,6 +101,7 @@ export default function NetworkPageView({ chainData }: NetworkPageViewProps): JS
                 }) ?? []
               }
               loading={txnLoading}
+              type="transaction"
             />
           </>
         </div>
