@@ -1,10 +1,11 @@
 import { SupportedChain, SupportedChains } from "./api";
-import { Coin } from "../utils/fetchNetworks";
 
 export interface HomepageProps {
   ui: HomepageUI;
-  data: Array<SupportedChain>;
-  deneme: Array<Coin>;
+  data: {
+    popularChains: Array<SupportedChain>;
+    searchedChains: Array<SupportedChain>;
+  };
 }
 
 export interface HomepageUI {

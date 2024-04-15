@@ -5,5 +5,5 @@ export const HomepageUIData: HomepageUI = {
   subHeader: "Uncover, Contrast, and Stay in the Loop with Blockchain Insights!",
   description: "Explore Ethereum, Avalanche, Solana,Arbitrium and Beyond!",
   popularNetworkSearchs: ["celo_mainnet", "fantom", "moonbeam", "velas"],
-  popularChainsIds: ["avalanche", "matic", "bsc", "ethereum"],
+  popularChainsIds: ["avalanche", "moonbeam", "fantom", "ethereum"],
 };

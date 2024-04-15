@@ -3,7 +3,7 @@ export interface SupportedChain {
   symbol: string;
   name: string;
   categories: string[];
-  description: { en: string; };
+  description: { en: string };
   image: {
     thumb: string;
     small: string;
