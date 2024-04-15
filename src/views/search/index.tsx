@@ -25,7 +25,9 @@ export default function SearchView({ supportedChains, suggestedChains }: SearchV
   function NoResults() {
     return (
       <>
-        <h1 className={styles["search_noResultsText"]}>No results found. You might want to consider the following options instead:</h1>
+        <h1 className={styles["search_noResultsText"]}>
+          No results found. You might want to consider the following options instead:
+        </h1>
         <div className={styles["search_grid"]}>
           {suggestedChains?.map((suggestedChain, i) => {
             return <Card index={i * 0.2} key={suggestedChain.id} data={suggestedChain} />;
