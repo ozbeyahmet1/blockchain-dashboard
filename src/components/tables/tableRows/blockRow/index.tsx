@@ -1,6 +1,6 @@
 import * as React from "react";
 import { HiOutlineCube } from "react-icons/hi2";
-import { EthereumBlocks } from "@/helpers/interfaces/api";
+import { BlockData } from "@/helpers/interfaces/queryTypes";
 import styles from "./blockRow.module.scss";
 
 /**
@@ -14,7 +14,7 @@ import styles from "./blockRow.module.scss";
  * @param reward - The reward for mining the block.
  * @returns The rendered block row component.
  */
-export default function BlockRow({ height, timestamp: { time }, transactionCount, miner, reward }: EthereumBlocks) {
+export default function BlockRow({ height, timestamp: { time }, transactionCount, miner, reward }: BlockData) {
   return (
     <div className={styles["blockRow"]}>
       <div className={styles["blockRow_icon"]}>
