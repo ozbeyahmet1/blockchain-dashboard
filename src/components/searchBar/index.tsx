@@ -2,19 +2,20 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { IoMdStarOutline } from "react-icons/io";
+import { SupportedChain } from "@/helpers/interfaces/api";
 import styles from "./searchBar.module.scss";
-import Tag from "../ui/tag";
 import Input from "../ui/input";
+import Tag from "../ui/tag";
 
 /**
  * SearchBar component for searching networks, tokens and transactions.
  * @param networks - An array of networks.
  */
 interface SearchBarProps {
-  networks: Array<string>;
+  chains: Array<SupportedChain>;
 }
 
-export default function SearchBar({ networks }: SearchBarProps) {
+export default function SearchBar({ chains }: SearchBarProps) {
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push(`/search?q=${search}`);
@@ -51,8 +52,8 @@ export default function SearchBar({ networks }: SearchBarProps) {
           <p>Popular Searchs</p>
         </div>
         <div className={styles["searchBar_tags"]}>
-          {networks.map((network) => {
-            return <Tag key={network} icon={<CiSearch size={20} color="white" />} text={network} />;
+          {chains.map((chain) => {
+            return <Tag as="a" key={chain.id} icon={<CiSearch size={20} color="white" />} text={chain.name} />;
           })}
         </div>
       </div>

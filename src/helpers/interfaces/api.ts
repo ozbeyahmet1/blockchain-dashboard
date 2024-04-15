@@ -2,34 +2,24 @@ export interface SupportedChain {
   id: SupportedChains;
   symbol: string;
   name: string;
-  web_slug: string;
   categories: string[];
   description: { en: string; };
-  links: {
-    homepage: string[];
-    whitepaper: string;
-    blockchain_site: string[];
-  };
   image: {
     thumb: string;
     small: string;
     large: string;
   };
+  web_slug: string;
 }
 
 export type SupportedChains =
-  | "algorand"
-  | "bitcoin"
   | "ethereum"
-  | "harmony"
-  | "cosmos"
-  | "filecoin"
-  | "flow"
-  | "tron"
-  | "eos"
-  | "cardano"
-  | "everscale"
-  | "solana"
-  | "stellar"
-  | "ripple"
-  | "tezos";
+  | "avalanche"
+  | "bsc"
+  | "matic"
+  | "celo_mainnet"
+  | "fantom"
+  | "moonbeam"
+  | "velas"
+  | "cronos"
+  | "klaytn";

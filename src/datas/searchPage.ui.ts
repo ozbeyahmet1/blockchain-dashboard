@@ -1,5 +1,5 @@
-import { HomepageUI, SearchPageProps } from "@/helpers/interfaces/pageProps";
+import { SearchPageProps } from "@/helpers/interfaces/pageProps";
 
 export const SearchPageUIData: SearchPageProps = {
-  suggestedChains: ["celo", "klaytn", "polygon", "fantom"],
+  suggestedChains: ["celo_mainnet", "klaytn", "matic", "fantom"],
 };
