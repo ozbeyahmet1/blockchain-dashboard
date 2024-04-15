@@ -1,0 +1,31 @@
+@import "../../styles/default/mixins";
+.search {
+  width: 100vw;
+  z-index: 99;
+  position: relative;
+  height: 100%;
+  padding-bottom: 100px;
+  &_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    z-index: 99;
+  }
+  &_noResultsText {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+}
+
+@include sm {
+  .search {
+    &_grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(55px, 1fr));
+      gap: 10px;
+      padding: 20px 0;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+  }
+}

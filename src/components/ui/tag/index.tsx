@@ -14,17 +14,19 @@ export interface TagProps {
    * The text to be displayed in the tag.
    */
   text: string;
+  as: "a" | "div";
 }
 
 /**
  * A component that represents a tag with optional icon.
  */
-export default function Tag({ icon, text }: TagProps) {
-  const issueUrl = "/" + text;
+export default function Tag({ icon, text, as }: TagProps) {
+  const issueUrl = "/" + text.toLowerCase();
+  const Component = as || "div";
   return (
-    <Link href={issueUrl} className={styles["tag"]}>
+    <Component href={issueUrl} className={styles["tag"]}>
       <p>{text}</p>
       {icon}
-    </Link>
+    </Component>
   );
 }

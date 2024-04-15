@@ -1,6 +1,6 @@
 import { ConnectButton } from "@rainbow-me/rainbowkit";
-import styles from "./header.module.scss";
 import Logo from "@/components/ui/logo";
+import styles from "./header.module.scss";
 
 export default function Header() {
   return (

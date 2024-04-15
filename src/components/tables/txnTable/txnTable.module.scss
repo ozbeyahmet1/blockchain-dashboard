@@ -1,0 +1,13 @@
+.txnTable {
+  font-family: "Montserrat", sans-serif;
+  background-color: white;
+  &_cell {
+    font-family: "Montserrat", sans-serif !important;
+    white-space: nowrap;
+    &--top {
+      font-family: "Montserrat", sans-serif !important;
+      white-space: nowrap;
+      font-weight: 700 !important;
+    }
+  }
+}

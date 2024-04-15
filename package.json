@@ -3,24 +3,36 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --write .",
     "prepare": "husky install",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "compile": "graphql-codegen",
+    "watch": "graphql-codegen -w"
   },
   "engines": {
     "node": ">=18.17.0",
     "npm": "please-use-yarn"
   },
   "dependencies": {
+    "@apollo/client": "^3.9.11",
+    "@apollo/server": "^4.10.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.15",
+    "@mui/material": "^5.15.15",
+    "@mui/x-data-grid": "^7.1.1",
     "@rainbow-me/rainbowkit": "^2.0.5",
     "@reduxjs/toolkit": "^2.2.2",
     "@tanstack/react-query": "^5.29.2",
+    "dotenv": "^16.4.5",
     "framer-motion": "^11.0.22",
+    "graphql": "^16.8.1",
+    "graphql-tag": "^2.12.6",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18",
@@ -35,9 +47,13 @@
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
+    "@graphql-codegen/cli": "^5.0.2",
+    "@graphql-codegen/client-preset": "^4.2.5",
+    "@graphql-typed-document-node/core": "^3.2.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "cross-env": "^7.0.3",
     "@typescript-eslint/eslint-plugin": "latest",
     "@typescript-eslint/parser": "latest",
     "eslint": "^8",
@@ -51,6 +67,6 @@
     "eslint-plugin-react-hooks": "latest",
     "husky": "^8.0.3",
     "prettier": "latest",
-    "typescript": "^5"
+    "typescript": "^5.4.5"
   }
 }

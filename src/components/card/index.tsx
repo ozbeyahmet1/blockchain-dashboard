@@ -1,17 +1,23 @@
-import * as React from "react";
-import styles from "./card.module.scss";
 import { AnimationProps, motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
+import * as React from "react";
+import { SupportedChain } from "@/helpers/interfaces/api";
+import styles from "./card.module.scss";
 
+/**
+ * Props for the Card component.
+ */
 export interface CardProps {
   index: number;
-  url: string;
-  name: string;
-  imageUrl: string;
+  data: SupportedChain;
 }
 
-export default function Card({ index, url, imageUrl, name }: CardProps) {
+/**
+ * A card component that displays information about a supported blockchain.
+ * @param {CardProps} props - The props for the Card component.
+ * @returns {JSX.Element} - The rendered Card component.
+ */
+export default function Card({ index, data: { name, image, web_slug } }: CardProps): JSX.Element {
   const cardMotionProps: AnimationProps = {
     initial: { y: -100, opacity: 0 },
     animate: { y: 0, opacity: 1 },
@@ -19,8 +25,8 @@ export default function Card({ index, url, imageUrl, name }: CardProps) {
   };
 
   return (
-    <motion.a href={url} className={styles["card"]} {...cardMotionProps}>
-      <Image className={styles["card_image"]} src={imageUrl} width={80} height={80} alt="" />
+    <motion.a href={"/" + web_slug.toLowerCase()} className={styles["card"]} {...cardMotionProps}>
+      <Image className={styles["card_image"]} src={image.large} width={80} height={80} alt="" />
       <p className={styles["card_title"]}>{name}</p>
     </motion.a>
   );
